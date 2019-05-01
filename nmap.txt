@@ -1,0 +1,65 @@
+viraj@viraj-PC:~$ nmap -sP www.google.com
+Starting Nmap 7.60 ( https://nmap.org ) at 2019-05-01 20:07 DST
+Host is up (0.0088s latency).
+Other addresses for www.google.com (not scanned): 2404:6800:4009:80d::2004
+rDNS record for 172.217.166.68: bom05s15-in-f4.1e100.net
+Nmap done: 1 IP address (1 host up) scanned in 5.54 seconds
+
+
+viraj@viraj:~$ sudo nmap -v -O google.com
+Starting Nmap 7.01 ( https://nmap.org ) at 2019-04-05 11:54 IST
+Initiating Ping Scan at 11:54
+Scanning google.com (172.217.166.78) [4 ports]
+Completed Ping Scan at 11:54, 0.23s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 11:54
+Completed Parallel DNS resolution of 1 host. at 11:54, 0.00s elapsed
+Initiating SYN Stealth Scan at 11:54
+Scanning google.com (172.217.166.78) [1000 ports]
+Discovered open port 443/tcp on 172.217.166.78
+Discovered open port 80/tcp on 172.217.166.78
+Completed SYN Stealth Scan at 11:54, 8.57s elapsed (1000 total ports)
+Initiating OS detection (try #1) against google.com (172.217.166.78)
+Nmap scan report for google.com (172.217.166.78)
+Host is up (0.00037s latency).
+Other addresses for google.com (not scanned): 2404:6800:4009:80d::200e
+rDNS record for 172.217.166.78: bom05s15-in-f14.1e100.net
+Not shown: 998 filtered ports
+PORT STATE SERVICE
+80/tcp  open http
+443/tcp open  https
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1
+closed port
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.18 - 2.6.22
+TCP Sequence Prediction: Difficulty=256 (Good luck!)
+IP ID Sequence Generation: All zeros
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 10.97 seconds
+       Raw packets sent: 2053 (92.900KB) | Rcvd: 18 (1.024KB)
+
+
+viraj@viraj:~$ nmap -sT google.com
+Nmap scan report for google.com (172.217.166.174)
+Host is up (0.020s latency).
+Other addresses for google.com (not scanned): 2404:6800:4009:80e::200e
+rDNS record for 172.217.166.174: bom07s20-in-f14.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+Nmap done: 1 IP address (1 host up) scanned in 10.60 seconds
+
+
+viraj@viraj:~$ sudo nmap -sU google.com
+Starting Nmap 7.01 ( https://nmap.org ) at 2019-04-05 11:57 IST
+Nmap scan report for google.com (172.217.166.78)
+Host is up (0.00054s latency).
+Other addresses for google.com (not scanned): 2404:6800:4009:80d::200e
+rDNS record for 172.217.166.78: bom05s15-in-f14.1e100.net
+Not shown: 999 open|filtered ports
+PORT   STATE  SERVICE
+33459/udp closed unknown
+Nmap done: 1 IP address (1 host up) scanned in 10.53 seconds
